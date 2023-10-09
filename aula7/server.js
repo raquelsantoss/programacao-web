@@ -10,10 +10,10 @@ app.set('views', __dirname + '/views')
 
 app.use(express.urlencoded({ extended: true }))
 
-const app_port = 8080
-app.listen(app_port, function() {
-  console.log('Application running on ' + app_port)
-})
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log('Application running on ' + PORT);
+});
 
 app.get('/', function (req, res) {
   res.render('index.html')

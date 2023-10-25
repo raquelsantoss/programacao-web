@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header bg-primary text-white text-center">
+            <h1 class="card-title">Calculadora</h1>
+          </div>
+          <div class="card-body">
+            <form method="post" action="/calcular">
+              <div class="mb-3">
+                <label for="numA" class="form-label">Primeiro número:</label>
+                <input type="number" class="form-control" id="numA" name="numA" required>
+              </div>
+              <div class="mb-3">
+                <label for="numB" class="form-label">Segundo número:</label>
+                <input type="number" class="form-control" id="numB" name="numB" required>
+              </div>
+              <div class="mb-3">
+                <label for="operacao" class="form-label">Operação:</label>
+                <select class="form-select" id="operacao" name="operacao" required>
+                  <option value="+">Soma</option>
+                  <option value="-">Subtração</option>
+                  <option value="*">Multiplicação</option>
+                  <option value="/">Divisão</option>
+                </select>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-success">Calcular</button>
+              </div>
+            </form>
+            {{#resultado}}
+            <div class="mt-4">
+              <h4 class="text-success">Resultado:</h4>
+              <p>{{resultado}}</p>
+            </div>
+            {{/resultado}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
